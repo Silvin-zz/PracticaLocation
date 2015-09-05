@@ -12,5 +12,6 @@
         android:name="pikino.practicalocation.CourseFragment"
         android:id="@+id/fragment"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        tools:layout="@layout/activity_course_list" />
 </RelativeLayout>

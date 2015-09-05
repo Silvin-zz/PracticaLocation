@@ -6,7 +6,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -46,15 +49,21 @@ public class CourseListAdapter extends BaseAdapter {
 
         if(convertView == null){
 
-            LayoutInflater lay = (LayoutInflater) context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
-            convertView        = lay.inflate(R.layout.activity_course_list, parent, false);
+            LayoutInflater lay  = (LayoutInflater) context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
+            convertView         = lay.inflate(R.layout.activity_course_list, parent, false);
         }
-        TextView courseName    = (TextView) convertView.findViewById(R.id.courseName);
-        TextView courseCost    = (TextView) convertView.findViewById(R.id.courseCost);
+        TextView  courseName    = (TextView) convertView.findViewById(R.id.courseName);
+        TextView  centerName    = (TextView) convertView.findViewById(R.id.centerName);
+        TextView  courseCost    = (TextView) convertView.findViewById(R.id.courseCost);
+        TextView  startDate     = (TextView) convertView.findViewById(R.id.startDate);
+        ImageView courseImage   = (ImageView)convertView.findViewById(R.id.courseImage);
+        CourseModel course      = this.rowItems.get(position);
 
-        CourseModel course     = this.rowItems.get(position);
         courseName.setText(course.getName());
-        courseCost.setText(course.getCost());
+        centerName.setText("Centro: "   + course.getCenterName());
+        courseCost.setText("MX$"        + course.getCost());
+        startDate.setText(course.getStartDate());
+        Picasso.with(context).load(course.getUrlImage()).into(courseImage);
         return convertView;
     }
 

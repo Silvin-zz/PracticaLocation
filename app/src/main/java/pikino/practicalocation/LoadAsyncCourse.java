@@ -69,9 +69,11 @@ public class LoadAsyncCourse extends AsyncTask<String, String, ArrayList<CourseM
                 String teacher      = obj.getString("teacher_name");
                 String centerName   = obj.getString("center_name");
                 String cost         = obj.getString("cost");
+                String urlImage     = obj.getString("course_image");
+                String startDate    = obj.getString("date");
                 double latitude     = Double.parseDouble(obj.getString("center_lt"));
                 double longitude    = Double.parseDouble(obj.getString("center_lng"));
-                courseObjects.add(new CourseModel(name,description,teacher,centerName,cost,latitude,longitude));
+                courseObjects.add(new CourseModel(name,description,teacher,centerName,cost,latitude,longitude, urlImage,startDate));
 
             }
 

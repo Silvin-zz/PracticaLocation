@@ -10,10 +10,13 @@ public class CourseModel {
     private String teacher;
     private String centerName;
     private String cost;
+    private String urlImage;
+    private String startDate;
     private double latitude;
     private double longitude;
 
-    public CourseModel(String name, String description, String teacher, String centerName, String cost, double latitude, double longitude) {
+
+    public CourseModel(String name, String description, String teacher, String centerName, String cost, double latitude, double longitude, String urlImage, String startDate) {
         this.name = name;
         this.description = description;
         this.teacher = teacher;
@@ -21,6 +24,8 @@ public class CourseModel {
         this.cost = cost;
         this.latitude = latitude;
         this.longitude = longitude;
+        this.urlImage  = urlImage;
+        this.startDate = startDate;
     }
 
 
@@ -78,5 +83,22 @@ public class CourseModel {
 
     public void setLongitude(double longitude) {
         this.longitude = longitude;
+    }
+
+    public String getUrlImage() {
+        return urlImage;
+    }
+
+    public void setUrlImage(String urlImage) {
+        this.urlImage = urlImage;
+    }
+
+
+    public String getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(String startDate) {
+        this.startDate = startDate;
     }
 }
